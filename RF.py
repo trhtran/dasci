@@ -18,7 +18,7 @@ train = pd.read_csv('%s/train.csv'%_dir)
 test  = pd.read_csv('%s/test.csv' %_dir)
 
 
-print '--- numerize week day ----'
+print '--- digitize week day ----'
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 daymap={d:v for d,v in zip(days,range(len(days)+1))}
 train_day = train['DayOfWeek']
@@ -29,14 +29,14 @@ for d,v in daymap.items():
 train['WeekDay'] = train_day
 test ['WeekDay'] =  test_day
 
-print '--- numerize hour ---'
+print '--- digitize hour ---'
 def getHour(_d) :
     d = datetime.strptime(_d, '%Y-%m-%d %H:%M:%S')
     return d.hour + d.minute/60. + d.second/3600.
 train['Hour'] = train['Dates'].apply(lambda x: getHour(x))
 test ['Hour'] = test ['Dates'].apply(lambda x: getHour(x))
 
-print '--- numerize day of year ---'
+print '--- digitize day of year ---'
 def getDayOfYear(_d) :
     d = datetime.strptime(_d, '%Y-%m-%d %H:%M:%S')
     nbDaysOfMonth = calendar.monthrange(2015,2)[1]

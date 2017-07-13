@@ -45,7 +45,7 @@ map_options = GMapOptions(lat=48.8003394, lng=2.2508597, map_type="roadmap", zoo
 
 # Google Maps now requires an API key. You can find out how to get one here:
 # https://developers.google.com/maps/documentation/javascript/get-api-key
-API_KEY = "AIzaSyDOESksOPLhqEwM-if1t2kNu8tdzbOevY4"
+API_KEY = ""
 
 x_range = DataRange1d()
 y_range = DataRange1d()
